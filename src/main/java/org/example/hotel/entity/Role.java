@@ -1,5 +1,5 @@
-//package org.example.hotel.entity;
-//
-//public enum Role {
-//    USER;
-//}
+package org.example.hotel.entity;
+
+public enum Role {
+    USER;
+}
