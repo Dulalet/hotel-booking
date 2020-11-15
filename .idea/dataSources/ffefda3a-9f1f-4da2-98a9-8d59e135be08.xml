@@ -1089,7 +1089,6 @@ Time</ColNames>
     <column id="335" parent="287" name="Name">
       <Position>8</Position>
       <DataType>varchar(50)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
     <column id="336" parent="287" name="email">
       <Position>9</Position>
