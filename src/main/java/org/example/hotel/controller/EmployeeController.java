@@ -3,11 +3,13 @@ package org.example.hotel.controller;
 import org.example.hotel.entity.Employee;
 import org.example.hotel.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@PreAuthorize("hasAuthority('MANAGER')")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
