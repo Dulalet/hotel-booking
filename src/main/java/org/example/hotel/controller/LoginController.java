@@ -22,18 +22,18 @@ public class LoginController {
     @GetMapping("")
     public String home(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
-        return "home";
+        return "th_home";
     }
 
     @GetMapping("/hello")
     public String hello(Model model){
-        return "hello";
+        return "th_hello";
     }
 
 
     @GetMapping("/registration")
     public String registration(){
-        return "registration";
+        return "th_registration";
     }
 
 
@@ -43,7 +43,7 @@ public class LoginController {
 
         if(userFromDb!=null){
             model.put("message", "User Exists!");
-            return "registration";
+            return "th_registration";
         }
 
         user.setActive(true);

@@ -22,7 +22,7 @@
         <tr th:each="user : ${users}">
             <td><span th:text="${user.username}"> Title </span></td>
             <td><span th:text="${user.roles}"> Author </span></td>
-            <td><a href="/user/${user.id}">edit</a></td>
+            <td><a th:href="@{/user/{id}(id=${user.id})}">edit</a></td>
         </tr>
         </tbody>
     </table>
