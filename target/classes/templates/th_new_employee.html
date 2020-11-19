@@ -1,0 +1,26 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+        <hr>
+        <h2>Save Employee</h2>
+        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="post">
+            <input type="text" th:field ="*{firstname}" placeholder="Employee First Name" class="form-control mb-4 col-4">
+            <input type="text" th:field ="*{lastname}" placeholder="Employee Last Name" class="form-control mb-4 col-4">
+            <input type="text" th:field ="*{email}" placeholder="Employee Email" class="form-control mb-4 col-4">
+            <input type="text" th:field ="*{phonenumber}" placeholder="Employee Phone Number" class="form-control mb-4 col-4">
+            <input type="text" th:field ="*{job}" placeholder="Employee Job" class="form-control mb-4 col-4">
+            <input type="text" th:field ="*{supervisorid}" placeholder="Employee SuperVisor Id" class="form-control mb-4 col-4">
+            <button type="submit" class = "btn btn-info col-2">Save Employee</button>
+        </form>
+    </div>
+
+</body>
+</html>
