@@ -4,6 +4,7 @@ package org.example.hotel.controller;
 import org.example.hotel.entity.Role;
 import org.example.hotel.entity.User;
 import org.example.hotel.repository.UserRepo;
+import org.example.hotel.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public String userList(Model model) {
@@ -58,6 +62,12 @@ public class UserController {
 
         userRepo.save(user);
 
+        return "redirect:/user";
+    }
+
+    @GetMapping("deleteUser/{id}")
+    public String deleteUser(@PathVariable (value = "id") long id){
+        this.userService.deleteUserById(id);
         return "redirect:/user";
     }
 

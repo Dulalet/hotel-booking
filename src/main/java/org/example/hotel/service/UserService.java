@@ -19,4 +19,8 @@
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
          return userRepo.findByUsername(username);
      }
+
+     public void deleteUserById(long id) {
+         this.userRepo.deleteById(id);
+     }
  }

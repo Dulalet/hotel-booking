@@ -27,6 +27,7 @@
             <td><span th:text="${user.username}"> Title </span></td>
             <td><span th:text="${user.roles}"> Author </span></td>
             <td><a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-primary" >edit</a></td>
+            <td><a th:href="@{user/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a></td>
         </tr>
         </tbody>
     </table>
