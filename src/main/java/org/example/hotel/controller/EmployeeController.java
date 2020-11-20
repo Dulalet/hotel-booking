@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@PreAuthorize("hasAuthority('MANAGER')")
+@PreAuthorize("hasAuthority('MANAGER') or hasAuthority('ADMIN')")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
