@@ -21,4 +21,8 @@ public class ReservationService {
     public List<Reservation> getAllReservations() {
         return reservationRepo.findAll();
     }
+
+    public void saveReservation(Reservation reservation) {
+        this.reservationRepo.save(reservation);
+    }
 }
