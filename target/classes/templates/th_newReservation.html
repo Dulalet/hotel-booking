@@ -11,10 +11,10 @@
     <h1>Employee Management System</h1>
     <hr>
     <h2>Save Employee</h2>
-    <form action="#" th:action="@{/reservations/saveReservation}" th:object="${reservation}" method="post">
+    <form action="#" th:action="@{/saveReservation}" th:object="${reservation}" method="post">
         <input type="text" th:field ="*{guestNum}" placeholder="Number of guests:" class="form-control mb-4 col-4">
-        <input type="text" th:field ="*{checkInDate}" placeholder="Check-in date" class="form-control mb-4 col-4">
-        <input type="text" th:field ="*{checkOutDate}" placeholder="Check-out date" class="form-control mb-4 col-4">
+        <input type="date" th:field ="*{checkInDate}" placeholder="Check-in date" class="form-control mb-4 col-4">
+        <input type="date" th:field ="*{checkOutDate}" placeholder="Check-out date" class="form-control mb-4 col-4">
 <!--        <input type="text" th:field ="*{rooms.id}" placeholder="Employee Phone Number" class="form-control mb-4 col-4">-->
 <!--        <input type="text" th:field ="*{job}" placeholder="Employee Job" class="form-control mb-4 col-4">-->
 <!--        <input type="text" th:field ="*{supervisorid}" placeholder="Employee SuperVisor Id" class="form-control mb-4 col-4">-->
