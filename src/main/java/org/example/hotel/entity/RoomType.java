@@ -5,8 +5,10 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.hotel.entity.Room;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -26,4 +28,8 @@ public class RoomType {
     @JsonManagedReference
     @ManyToOne
     private Hotel hotel;
+
+    @OneToMany(mappedBy = "roomtype")
+    private Set<Room> rooms;
+
 }

@@ -1,0 +1,48 @@
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div th:include="fragments/th_navbar"></div>
+
+<div class="container">
+    <h1>Reservation System</h1>
+    <hr>
+
+    <h2>Select a Hotel</h2>
+    <select>
+        <option th:value="text" th:each="hotel : ${hotel.username}"></option>
+    </select>
+    <form action="#" th:action="@{/saveReservation}" method="post">
+        <input type="text" th:value ="*{reservation.guestNum}" name = "guestNum" placeholder="Number of guests:" class="form-control mb-4 col-4">
+        <input type="date" th:value ="*{reservation.checkInDate}" name = "checkInDate" placeholder="Check-in date" class="form-control mb-4 col-4">
+        <input type="date" th:value ="*{reservation.checkOutDate}" name = "checkOutDate" placeholder="Check-out date" class="form-control mb-4 col-4">
+        <div>Guest Information: </div>
+        <input type="text" th:value ="*{guest.firstname}" name = "firstname" placeholder="Guest First Name" class="form-control mb-4 col-4">
+        <input type="text" th:value ="*{guest.lastname}" name = "lastname" placeholder="Guest Last Name" class="form-control mb-4 col-4">
+        <input type="text" th:value ="*{guest.email}" name = "email" placeholder="Employee Email" class="form-control mb-4 col-4">
+        <input type="text" th:value ="*{guest.phonenumber}" name = "phonenumber" placeholder="Employee Phone Number" class="form-control mb-4 col-4">
+        <input type="text" th:value ="*{guest.job}" name = "job" placeholder="Employee Job" class="form-control mb-4 col-4">
+        <input type="text" th:value ="*{guest.category}" name = "category" placeholder="Employee SuperVisor Id" class="form-control mb-4 col-4">
+        <div>Room Type: </div>
+        <select>
+            <option th:each="var : ${RoomTypeList}"
+                    th:value="${var}"
+                    th:text="${var}"
+            ></option>
+        </select>
+        <!--            <input type="int" th:value ="*{roomType.price}" name = "capacity" placeholder="Employee SuperVisor Id" class="form-control mb-4 col-4">-->
+        <button type="submit" class = "btn btn-info col-2">Save Reservations</button>
+    </form>
+</div>
+
+
+<div th:include="fragments/th_footer"></div>
+
+</body>
+</html>

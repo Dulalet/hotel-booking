@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -23,5 +24,8 @@ public class Guest {
     private String phonenumber;
     private String job;
     private String category;
+
+    @OneToMany(cascade= {CascadeType.ALL})
+    private Set<Reservation> reservations;
 
 }

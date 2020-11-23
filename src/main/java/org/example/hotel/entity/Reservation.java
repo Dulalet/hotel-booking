@@ -19,14 +19,15 @@ import java.util.Set;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
     private int guestNum;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date checkInDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date checkOutDate;
-    @ManyToOne
+
+    @ManyToOne(cascade= {CascadeType.ALL})
     private Guest guest;
 
     @JsonManagedReference

@@ -10,27 +10,32 @@
           crossorigin="anonymous">
 </head>
 <body>
-<div class="container my-2">
-    <table border="1" class = "table table-striped table-responsive-md">
-        <thead>
-        <tr>
-            <th> Name </th>
-            <th> Role </th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:if="${users.empty}">
-            <td colspan="2"> No Books Available </td>
-        </tr>
-        <tr th:each="user : ${users}">
-            <td><span th:text="${user.username}"> Title </span></td>
-            <td><span th:text="${user.roles}"> Author </span></td>
-            <td><a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-primary" >edit</a></td>
-            <td><a th:href="@{user/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+
+    <div th:include="fragments/th_navbar"></div>
+
+    <div class="container my-2">
+        <table border="1" class = "table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th> Name </th>
+                <th> Role </th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${users.empty}">
+                <td colspan="2"> No Books Available </td>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td><span th:text="${user.username}"> Title </span></td>
+                <td><span th:text="${user.roles}"> Author </span></td>
+                <td><a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-primary" >edit</a></td>
+                <td><a th:href="@{user/deleteUser/{id}(id=${user.id})}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:include="fragments/th_footer"></div>
 </body>
 </html>

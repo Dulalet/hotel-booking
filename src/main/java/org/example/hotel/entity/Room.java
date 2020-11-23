@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +19,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private int floor;
+
     @JsonManagedReference
     @ManyToOne
     private Hotel hotel;
@@ -26,7 +29,11 @@ public class Room {
     @ManyToOne
     private RoomType roomtype;
 
-    private int floor;
+    @JsonManagedReference
+    @ManyToMany
+    private Set<Reservation> reservations;
+
+
 
 
 }
